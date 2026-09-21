@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jackson Digital Hub</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#f8fafc}
+.top{background:linear-gradient(90deg,#f59e0b,#ef4444);color:#fff;text-align:center;padding:8px;font-size:11px;font-weight:800}
+header{background:#0f172a;color:#fff;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:20}
+.hero{padding:15px 5%;background:#fff}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 5%}
+.box{background:#fff;padding:10px;border-radius:10px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.1);border:1px solid #eee}
+.box b{font-size:11px}
+.pr{color:#16a34a;font-weight:800;font-size:13px}
+.card{background:#fff;padding:14px;margin:10px 5%;border-radius:12px;box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.inp{width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;margin-bottom:8px}
+.btn{padding:12px;border-radius:8px;border:none;width:100%;font-weight:800;margin-top:6px;display:block;text-align:center;text-decoration:none}
+#adminPanel{display:none;min-height:100vh;background:#f1f5f9}
+.wa{position:fixed;bottom:15px;right:15px;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;z-index:99}
+</style>
+</head>
+<body>
+<div class="top">🔥 TODAY: Printing @10 | KRA @300 | HELB @200 - 0785085244</div>
+<header><b style="font-size:14px">JACKSON DIGITAL HUB</b><button id="adminBtn" style="background:#16a34a;color:#fff;border:none;padding:7px 12px;border-radius:6px;font-weight:800;font-size:11px">ADMIN</button></header>
+
+<div id="clientSite">
+<div class="hero"><h2 style="font-size:19px">Affordable Cyber Services<br>Mombasa Town</h2><p style="font-size:11px;color:#64748b;margin-top:4px">Fast, Cheap, Trusted - Mombasa Next to Naivas</p></div>
+
+<div class="grid">
+<div class="box">🖨️<br><b>Printing B/W</b><div class="pr">KSh 10</div></div>
+<div class="box">🎨<br><b>Color Print</b><div class="pr">KSh 30</div></div>
+<div class="box">📄<br><b>Photocopy</b><div class="pr">KSh 5</div></div>
+<div class="box">📑<br><b>Lamination</b><div class="pr">KSh 50</div></div>
+<div class="box">💼<br><b>KRA Returns</b><div class="pr">KSh 300</div></div>
+<div class="box">🎓<br><b>HELB Loan</b><div class="pr">KSh 200</div></div>
+<div class="box">🏛️<br><b>eCitizen</b><div class="pr">KSh 200</div></div>
+<div class="box">💻<br><b>Website</b><div class="pr">KSh 3500</div></div>
+<div class="box">🪪<br><b>KRA PIN</b><div class="pr">KSh 150</div></div>
+<div class="box">📧<br><b>CV Writing</b><div class="pr">KSh 100</div></div>
+<div class="box">🖼️<br><b>Posters</b><div class="pr">KSh 300</div></div>
+<div class="box">📶<br><b>Govt Jobs</b><div class="pr">KSh 150</div></div>
+</div>
+
+<div style="margin:0 5%;background:#0f172a;color:#fff;padding:10px;border-radius:8px;text-align:center;font-size:10px">✅ ALL SERVICES: Printing, KRA, HELB, eCitizen, SHA, NTSA, Biz Reg, Graphics, Websites</div>
+
+<div class="card">
+<div style="background:#0f172a;color:#fff;padding:12px;border-radius:10px;text-align:center;border:2px dashed #fbbf24;margin-bottom:10px">
+<h3 style="color:#fbbf24;font-size:14px">📢 JACKSON CYBER</h3><p style="font-size:10px;margin:4px 0">Mombasa - Fast Service</p><b style="background:#fbbf24;color:#000;padding:5px 10px;border-radius:20px;font-size:12px">📞 0785085244</b>
+</div>
+<h3 style="font-size:14px;margin-bottom:8px">📝 Register</h3>
+<input class="inp" id="name" placeholder="Full Name *">
+<input class="inp" id="phone" placeholder="Phone * 07...">
+<select class="inp" id="serv"><option value="">Select Service</option><option>KRA - 300</option><option>HELB - 200</option><option>Printing - 10</option><option>Website - 3500</option><option>eCitizen</option></select>
+<button class="btn" style="background:#000;color:#fff" id="subBtn">Submit</button>
+<div id="msg" style="display:none;background:#dcfce7;color:#166534;padding:10px;border-radius:6px;margin-top:8px;text-align:center;font-weight:700;font-size:12px">✅ Registered!</div>
+
+<div style="margin-top:12px">
+<div style="background:#e8f5e9;border:2px solid #4caf50;padding:10px;border-radius:8px;text-align:center;margin-bottom:8px">
+<b style="font-size:12px">📱 M-PESA / AIRTEL</b><br><b style="font-size:18px">0785085244</b><br><button class="btn" style="background:#4caf50;color:#fff;font-size:12px" onclick="navigator.clipboard.writeText('0785085244');alert('Copied 0785085244')">📋 Copy Number</button>
+</div>
+<div style="background:#fff8e1;border:1px dashed orange;padding:10px;border-radius:8px;text-align:center">
+<b style="font-size:11px">₮ USDT BEP20</b><br><small style="word-break:break-all;font-size:8px">0xC12DDDa22A0BB3244d0E821E25523f8247A1670E</small><br><button class="btn" style="background:orange;color:#fff;font-size:12px" onclick="navigator.clipboard.writeText('0xC12DDDa22A0BB3244d0E821E25523f8247A1670E');alert('USDT Copied')">📋 Copy USDT</button>
+</div>
+</div>
+</div>
+</div>
+
+<div id="adminPanel">
+<div class="card" style="background:#0f172a;color:#fff;margin:0;border-radius:0">
+<h3>🔐 ADMIN - PIN 1941</h3><p id="total" style="margin:8px 0;background:#1e293b;padding:8px;border-radius:6px;font-size:12px">Loading...</p>
+<button class="btn" style="background:#16a34a;color:#fff" id="refBtn">🔄 Refresh Clients</button>
+<button class="btn" style="background:#ef4444;color:#fff" id="clrBtn">🗑️ Clear All</button>
+<button class="btn" style="background:#fff;color:#000" id="backBtn">🏠 Back to Website</button>
+</div>
+<div class="card" id="list"></div>
+</div>
+
+<a class="wa" href="https://wa.me/254785085244?text=Hi%20Jackson%20I%20need%20cyber%20services" target="_blank">💬</a>
+
+<script>
+document.getElementById('adminBtn').onclick=function(){
+ var p=prompt('Enter PIN:');
+ if(p!=='1941'){if(p!==null)alert('Wrong! PIN is 1941');return;}
+ document.getElementById('clientSite').style.display='none';
+ document.querySelector('.wa').style.display='none';
+ document.getElementById('adminPanel').style.display='block';
+ loadC();
+};
+document.getElementById('backBtn').onclick=function(){
+ document.getElementById('adminPanel').style.display='none';
+ document.getElementById('clientSite').style.display='block';
+ document.querySelector('.wa').style.display='flex';
+};
+document.getElementById('refBtn').onclick=function(){loadC();alert('Refreshed');};
+document.getElementById('clrBtn').onclick=function(){if(confirm('Delete all?')){localStorage.removeItem('jdh_users');loadC();}};
+document.getElementById('subBtn').onclick=function(){
+ var n=document.getElementById('name').value.trim(), ph=document.getElementById('phone').value.trim();
+ if(n==''||ph==''){alert('Enter Name & Phone');return;}
+ var a=localStorage.getItem('jdh_users'), u=a?JSON.parse(a):[];
+ u.push({name:n,phone:ph,service:document.getElementById('serv').value,date:new Date().toLocaleString()});
+ localStorage.setItem('jdh_users',JSON.stringify(u));
+ document.getElementById('msg').style.display='block';
+ document.getElementById('name').value='';document.getElementById('phone').value='';
+ setTimeout(function(){document.getElementById('msg').style.display='none'},2500);
+};
+function loadC(){
+ var a=localStorage.getItem('jdh_users'), u=a?JSON.parse(a):[];
+ document.getElementById('total').innerText='Total: '+u.length+' clients';
+ var h=u.length==0?'No clients yet':'';
+ for(var i=0;i<u.length;i++){h+="<div style='border-bottom:1px solid #eee;padding:8px 0;font-size:12px'><b>"+(i+1)+". "+u[i].name+"</b> "+u[i].phone+"<br>"+(u[i].service||'')+"<br><a href='tel:"+u[i].phone+"' style='color:green'>📞 Call</a> | <a href='https://wa.me/254"+u[i].phone.slice(-9)+"' style='color:green'>💬 WhatsApp</a></div>";}
+ document.getElementById('list').innerHTML=h;
+}
+</script>
+</body>
+</html>
