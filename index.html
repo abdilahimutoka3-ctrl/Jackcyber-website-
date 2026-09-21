@@ -19,7 +19,20 @@ header{background:#0f172a;color:#fff;padding:12px 5%;display:flex;justify-conten
 #adminPanel{display:none;min-height:100vh;background:#f1f5f9}
 .wa{position:fixed;bottom:15px;right:15px;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;z-index:99}
 </style>
-</head>
+</head><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://myijcpbvytgitezofajh.supabase.co";
+
+const SUPABASE_KEY = "sb_publishable_9lpshuD6TlYuc4VkVvqmGQ_qkcyJsYr";
+
+const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+console.log("Supabase connected!");
+</script>
 <body>
 <div class="top">🔥 TODAY: Printing @10 | KRA @300 | HELB @200 - 0785085244</div>
 <header><b style="font-size:14px">JACKSON DIGITAL HUB</b><button id="adminBtn" style="background:#16a34a;color:#fff;border:none;padding:7px 12px;border-radius:6px;font-weight:800;font-size:11px">ADMIN</button></header>
