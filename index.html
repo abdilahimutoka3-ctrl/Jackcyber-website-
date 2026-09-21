@@ -33,7 +33,17 @@ const supabaseClient = supabase.createClient(
 
 console.log("Supabase connected!");
 </script>
-<body>
+<<div class="register-box">
+    <h2>Create Account</h2>
+
+    <input type="text" id="fullName" placeholder="Full Name">
+
+    <input type="email" id="email" placeholder="Email">
+
+    <input type="password" id="password" placeholder="Password">
+
+    <button onclick="registerUser()">Register</button>
+</div>>
 <div class="top">🔥 TODAY: Printing @10 | KRA @300 | HELB @200 - 0785085244</div>
 <header><b style="font-size:14px">JACKSON DIGITAL HUB</b><button id="adminBtn" style="background:#16a34a;color:#fff;border:none;padding:7px 12px;border-radius:6px;font-weight:800;font-size:11px">ADMIN</button></header>
 
@@ -123,6 +133,49 @@ function loadC(){
  var h=u.length==0?'No clients yet':'';
  for(var i=0;i<u.length;i++){h+="<div style='border-bottom:1px solid #eee;padding:8px 0;font-size:12px'><b>"+(i+1)+". "+u[i].name+"</b> "+u[i].phone+"<br>"+(u[i].service||'')+"<br><a href='tel:"+u[i].phone+"' style='color:green'>📞 Call</a> | <a href='https://wa.me/254"+u[i].phone.slice(-9)+"' style='color:green'>💬 WhatsApp</a></div>";}
  document.getElementById('list').innerHTML=h;
+}
+</script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://myijcpbvytgitezofajh.supabase.co";
+const SUPABASE_KEY = "sb_publishable_9lpshuD6TlYuc4VkVvqmGQ_qkcyJsYr";
+
+const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+async function registerUser() {
+    const name = document.getElementById("fullName").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+
+    if (!name || !email || !password) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters.");
+        return;
+    }
+
+    const { data, error } = await supabaseClient.auth.signUp({
+        email: email,
+        password: password,
+        options: {
+            data: {
+                full_name: name
+            }
+        }
+    });
+
+    if (error) {
+        alert(error.message);
+        return;
+    }
+
+    alert("Registration successful! Check your email to verify your account.");
 }
 </script>
 </body>
